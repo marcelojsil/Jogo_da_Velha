@@ -8,7 +8,7 @@ let square = {
 
 let player = ''; //indica de quem é a vez
 let warning = ''; //indica o resultado do jogo
-let playing = ''; //indica se o jogo acabou ou não
+let playing = false; //indica se o jogo acabou ou não
 
 
 //Eventos
@@ -49,7 +49,7 @@ function reset() {
     warning = '';
 
     let random = Math.floor(Math.random() * 2); //Conta aleatória que arredonda ou para 0 ou 1
-    player = (random === 0) ? 'X' : 'O' //mesma coisa do que está abaixo
+    player = (random === 0) ? 'X' : 'O'; //mesma coisa do que está abaixo
     
     /*if(random === 0) {
         player = 'X';
@@ -97,16 +97,16 @@ function checkGame() {
 
 function checkWinnerFor(player) {
     let pos = [    // possibilidades de vitória
-        'a1, a2, a3',
-        'b1, b2, b3',   // horizontal
-        'c1, c2, c3',
+        'a1,a2,a3',
+        'b1,b2,b3',   // horizontal
+        'c1,c2,c3',
 
-        'a1, b1, c1',
-        'a2, b2, c2',   // vertical
-        'a3, b3, c3',
+        'a1,b1,c1',
+        'a2,b2,c2',   // vertical
+        'a3,b3,c3',
 
-        'a1, b2, c3',   // cruzado
-        'a3, b2, c1'
+        'a1,b2,c3',   // cruzado
+        'a3,b2,c1'
     ];
 
     for(let w in pos) {
